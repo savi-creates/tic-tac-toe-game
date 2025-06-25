@@ -39,3 +39,10 @@
   border-radius: 12px;
   cursor: pointer;
 }
+
+.board {
+  height: 600px;
+  width: 564px;
+  display: flex;
+  margin: auto;
+}
