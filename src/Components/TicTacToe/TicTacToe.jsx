@@ -27,6 +27,7 @@ const TicTacToe = () => {
   let box7 = useRef(null);
   let box8 = useRef(null);
   let box9 = useRef(null);
+  const [turnText, setTurnText] = useState("X's Turn");
 
   let box_array = [box1, box2, box3, box4, box5, box6, box7, box8, box9];
 
@@ -40,9 +41,11 @@ const TicTacToe = () => {
     if (count % 2 === 0) {
       e.target.innerHTML = `<img src='${cross_icon}' />`;
       data[num] = "x";
+      setTurnText("O's Turn");
     } else {
       e.target.innerHTML = `<img src='${circle_icon}' />`;
       data[num] = "o";
+      setTurnText("X's Turn");
     }
 
     setCount(count + 1);
@@ -72,12 +75,14 @@ const TicTacToe = () => {
       clickAudio.currentTime = 0;
       drawAudio.play();
       titleRef.current.innerHTML = `It's a draw! 🤝`;
+      setTurnText("");
       setLock(true);
     }
   };
 
   const won = (winner) => {
     setLock(true);
+    setTurnText("");
     clickAudio.currentTime = 0;
     winAudio.play();
     if (winner === "x") {
@@ -103,6 +108,7 @@ const TicTacToe = () => {
       <h1 className="title" ref={titleRef}>
         Tic Tac Toe Game In <span>React</span>
       </h1>
+      <h2 className="turn-indicator">{turnText}</h2>
       <div className="board">
         <div className="row1">
           <div
