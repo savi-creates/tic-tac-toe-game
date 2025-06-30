@@ -98,6 +98,7 @@ const TicTacToe = () => {
     setLock(false);
     data = ["", "", "", "", "", "", "", "", ""];
     titleRef.current.innerHTML = `Tic Tac Toe In <span>React</span>`;
+
     box_array.forEach((e) => {
       e.current.innerHTML = "";
     });
@@ -106,7 +107,7 @@ const TicTacToe = () => {
   return (
     <div className="container">
       <h1 className="title" ref={titleRef}>
-        Tic Tac Toe Game In <span>React</span>
+        Tic Tac Toe In <span>React</span>
       </h1>
       {turnText && (
         <div className="turn-indicator">

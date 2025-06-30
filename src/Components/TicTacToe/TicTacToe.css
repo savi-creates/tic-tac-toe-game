@@ -5,10 +5,13 @@
 .title {
   margin-top: 50px;
   color: white;
-  font-size: 60px;
+  font-size: clamp(24px, 6vw, 60px);
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+  line-height: 1.2;
 }
 
 .title span {
